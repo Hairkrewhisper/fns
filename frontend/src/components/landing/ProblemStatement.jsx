@@ -31,7 +31,7 @@ export default function ProblemStatement() {
   return (
     <section
       data-testid="problem-section"
-      className="bg-[#F4F4F1] py-20 lg:py-32 relative overflow-hidden"
+      className="bg-[#F9FAFB] py-20 lg:py-32 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
@@ -52,10 +52,10 @@ export default function ProblemStatement() {
               дней</strong>. На пояснения по НДС — 10 дней. После — последствия наступают
               автоматически.
             </p>
-            <div className="mt-8 inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-[#022C22] text-white">
-              <Clock4 className="w-5 h-5 text-amber-300" />
+            <div className="mt-8 inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-green-50 border border-green-200 text-[#0F172A]">
+              <Clock4 className="w-5 h-5 text-[#16A34A]" />
               <div className="text-sm font-medium">
-                Дедлайн пропустить нельзя. <span className="text-amber-300 font-semibold">Действуем за 2 дня.</span>
+                Дедлайн пропустить нельзя. <span className="text-[#16A34A] font-bold">Действуем за 2 дня.</span>
               </div>
             </div>
           </div>

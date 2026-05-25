@@ -12,14 +12,14 @@ const ITEMS = [
 export default function TrustBar() {
   const arr = [...ITEMS, ...ITEMS];
   return (
-    <section data-testid="trust-bar" className="bg-[#F4F4F1] border-y border-black/5 py-6 overflow-hidden">
+    <section data-testid="trust-bar" className="bg-[#F9FAFB] border-y border-black/5 py-6 overflow-hidden">
       <div className="relative">
         <div className="flex gap-12 animate-marquee whitespace-nowrap">
           {arr.map((it, i) => {
             const Icon = it.icon;
             return (
               <div key={i} className="flex items-center gap-2.5 text-[#475569] shrink-0">
-                <Icon className="w-4 h-4 text-[#064E3B]" />
+                <Icon className="w-4 h-4 text-[#16A34A]" />
                 <span className="text-sm font-semibold tracking-tight">{it.label}</span>
               </div>
             );

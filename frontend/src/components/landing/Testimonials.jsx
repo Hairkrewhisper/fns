@@ -33,7 +33,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 mb-14">
           <div className="lg:col-span-6">
-            <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#064E3B] mb-5">
+            <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#16A34A] mb-5">
               · Отзывы клиентов
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-[#0F172A] leading-[1.05]">
@@ -69,12 +69,12 @@ export default function Testimonials() {
             <div
               key={i}
               data-testid={`testimonial-${i}`}
-              className="bg-[#F4F4F1] rounded-3xl p-7 lg:p-8 relative border border-black/[0.04]"
+              className="bg-[#F9FAFB] rounded-3xl p-7 lg:p-8 relative border border-black/[0.04]"
             >
-              <Quote className="w-8 h-8 text-[#064E3B]/15 mb-4" />
+              <Quote className="w-8 h-8 text-[#16A34A]/15 mb-4" />
               <p className="text-base text-[#0F172A] leading-relaxed mb-7">«{t.quote}»</p>
               <div className="flex items-center gap-3 pt-5 border-t border-black/[0.06]">
-                <div className="w-10 h-10 rounded-full bg-[#064E3B] text-white flex items-center justify-center font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-[#16A34A] text-white flex items-center justify-center font-bold text-sm">
                   {t.name.split(" ").map((s) => s[0]).join("")}
                 </div>
                 <div>

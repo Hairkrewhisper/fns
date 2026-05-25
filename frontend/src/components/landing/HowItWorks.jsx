@@ -54,7 +54,7 @@ export default function HowItWorks() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14 lg:mb-20">
-          <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#064E3B] mb-5">
+          <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#16A34A] mb-5">
             · 6 этапов
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-[#0F172A] leading-[1.05]">
@@ -73,23 +73,23 @@ export default function HowItWorks() {
               <div
                 key={i}
                 data-testid={`step-${i + 1}`}
-                className="bg-white p-7 lg:p-9 relative group hover:bg-[#F4F4F1] transition-colors duration-300"
+                className="bg-white p-7 lg:p-9 relative group hover:bg-[#F9FAFB] transition-colors duration-300"
               >
                 <div className="flex items-center justify-between mb-6">
-                  <span className="mono text-xs font-bold tracking-widest text-[#064E3B]">
+                  <span className="mono text-xs font-bold tracking-widest text-[#16A34A]">
                     {s.n}
                   </span>
-                  <ArrowRight className="w-4 h-4 text-black/20 group-hover:text-[#064E3B] group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-black/20 group-hover:text-[#16A34A] group-hover:translate-x-1 transition-all" />
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-[#064E3B] text-white flex items-center justify-center mb-5">
+                <div className="w-12 h-12 rounded-xl bg-[#16A34A] text-white flex items-center justify-center mb-5">
                   <Icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-xl font-extrabold tracking-tight text-[#0F172A] mb-2">
                   {s.title}
                 </h3>
                 <p className="text-sm text-[#475569] leading-relaxed mb-5">{s.desc}</p>
-                <div className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.14em] font-bold text-[#064E3B] bg-emerald-50 px-2.5 py-1 rounded-full">
-                  <span className="w-1 h-1 rounded-full bg-[#064E3B]" />
+                <div className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.14em] font-bold text-[#16A34A] bg-green-50 px-2.5 py-1 rounded-full">
+                  <span className="w-1 h-1 rounded-full bg-[#16A34A]" />
                   {s.time}
                 </div>
               </div>

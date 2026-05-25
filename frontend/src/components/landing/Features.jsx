@@ -5,12 +5,12 @@ export default function Features() {
     <section
       id="features"
       data-testid="features-section"
-      className="bg-[#F4F4F1] py-20 lg:py-32"
+      className="bg-[#F9FAFB] py-20 lg:py-32"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
           <div className="max-w-2xl">
-            <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#064E3B] mb-5">
+            <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#16A34A] mb-5">
               · Что внутри
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-[#0F172A] leading-[1.05]">
@@ -26,19 +26,20 @@ export default function Features() {
         {/* Bento grid */}
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 lg:gap-5">
           {/* Big card */}
-          <div className="md:col-span-4 bg-[#022C22] text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden min-h-[340px] flex flex-col justify-between grain-overlay">
-            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/20 blur-3xl" />
+          <div className="md:col-span-4 bg-[#16A34A] text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden min-h-[340px] flex flex-col justify-between">
+            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-green-300/30 blur-3xl" />
+            <div className="absolute top-0 right-0 w-64 h-64 dot-pattern opacity-30 mix-blend-overlay" />
             <div className="relative">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 mb-6">
-                <BrainCircuit className="w-3.5 h-3.5 text-emerald-300" />
-                <span className="text-[10px] uppercase tracking-[0.18em] font-bold text-emerald-200">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/20 mb-6 backdrop-blur">
+                <BrainCircuit className="w-3.5 h-3.5 text-white" />
+                <span className="text-[10px] uppercase tracking-[0.18em] font-bold text-white">
                   AI-анализ требования
                 </span>
               </div>
               <h3 className="text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight max-w-md">
                 Понимает суть требования за секунды
               </h3>
-              <p className="mt-4 text-white/70 max-w-lg leading-relaxed">
+              <p className="mt-4 text-white/85 max-w-lg leading-relaxed">
                 Извлекаем тип требования, статьи НК РФ, перечень документов и сроки. Выделяем
                 красные зоны: расхождения 6-НДФЛ / РСВ, низкая зарплата, разрывы по НДС.
               </p>
@@ -69,7 +70,7 @@ export default function Features() {
             </div>
             <div className="flex items-center justify-between mt-6 pt-6 border-t border-black/[0.06]">
               <span className="mono text-xs text-[#475569]">accuracy</span>
-              <span className="text-xl font-extrabold tracking-tight text-[#064E3B]">99.4%</span>
+              <span className="text-xl font-extrabold tracking-tight text-[#16A34A]">99.4%</span>
             </div>
           </div>
 
@@ -94,7 +95,7 @@ export default function Features() {
           {/* CTA card */}
           <div className="md:col-span-3 bg-white border border-black/[0.06] rounded-3xl p-7 lg:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#064E3B] text-white flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-[#16A34A] text-white flex items-center justify-center">
                 <Package className="w-5 h-5" />
               </div>
               <div>
@@ -109,7 +110,7 @@ export default function Features() {
             <a
               href="#pricing"
               data-testid="features-pricing-link"
-              className="inline-flex items-center gap-1.5 text-sm font-bold text-[#064E3B] hover:text-[#022C22] group"
+              className="inline-flex items-center gap-1.5 text-sm font-bold text-[#16A34A] hover:text-[#15803D] group"
             >
               Смотреть тарифы
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -123,8 +124,8 @@ export default function Features() {
 
 function FeatureCard({ icon, title, desc }) {
   return (
-    <div className="bg-white border border-black/[0.06] rounded-3xl p-7 hover:border-[#064E3B]/20 hover:-translate-y-1 transition-all duration-300">
-      <div className="w-11 h-11 rounded-xl bg-emerald-50 text-[#064E3B] flex items-center justify-center mb-5">
+    <div className="bg-white border border-black/[0.06] rounded-3xl p-7 hover:border-[#16A34A]/20 hover:-translate-y-1 transition-all duration-300">
+      <div className="w-11 h-11 rounded-xl bg-green-50 text-[#16A34A] flex items-center justify-center mb-5">
         {icon}
       </div>
       <h3 className="text-lg font-extrabold tracking-tight text-[#0F172A] mb-2">{title}</h3>
@@ -135,7 +136,7 @@ function FeatureCard({ icon, title, desc }) {
 
 function Chip({ label }) {
   return (
-    <div className="text-center text-xs font-semibold px-3 py-2 rounded-lg bg-white/[0.06] border border-white/10 text-emerald-100 tracking-tight">
+    <div className="text-center text-xs font-semibold px-3 py-2 rounded-lg bg-white/15 border border-white/20 text-white tracking-tight backdrop-blur">
       {label}
     </div>
   );

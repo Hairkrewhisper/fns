@@ -68,12 +68,12 @@ export default function FAQ() {
     <section
       id="faq"
       data-testid="faq-section"
-      className="bg-[#F4F4F1] py-20 lg:py-32"
+      className="bg-[#F9FAFB] py-20 lg:py-32"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 mb-14">
           <div className="lg:col-span-5">
-            <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#064E3B] mb-5">
+            <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#16A34A] mb-5">
               · FAQ
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-[#0F172A] leading-[1.05]">
@@ -81,7 +81,7 @@ export default function FAQ() {
             </h2>
             <p className="mt-5 text-base text-[#475569] leading-relaxed">
               Всё, что важно знать: виды, сроки, штрафы, порядок ответа. Не нашли ответ —
-              <a href="https://crm.fns.expert/register" className="text-[#064E3B] font-semibold underline underline-offset-2 ml-1">
+              <a href="https://crm.fns.expert/register" className="text-[#16A34A] font-semibold underline underline-offset-2 ml-1">
                 задайте вопрос эксперту
               </a>.
             </p>

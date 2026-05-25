@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 function App() {
   return (
-    <div className="App min-h-screen bg-[#F4F4F1]">
+    <div className="App min-h-screen bg-[#F9FAFB]">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />

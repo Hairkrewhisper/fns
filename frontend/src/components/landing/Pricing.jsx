@@ -104,7 +104,7 @@ export default function Pricing() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12 lg:mb-16">
-          <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#064E3B] mb-5">
+          <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#16A34A] mb-5">
             · Тарифы
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-[#0F172A] leading-[1.05]">
@@ -123,16 +123,16 @@ export default function Pricing() {
         </div>
 
         <div className="mt-12 grid md:grid-cols-2 gap-4 lg:gap-5">
-          <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-7">
-            <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[#064E3B] mb-3">
+          <div className="bg-green-50 border border-green-100 rounded-2xl p-7">
+            <div className="text-[11px] uppercase tracking-[0.18em] font-bold text-[#16A34A] mb-3">
               что вы получаете
             </div>
             <ul className="space-y-2 text-sm text-[#0F172A]">
-              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#064E3B] shrink-0 mt-0.5" /> Юридически выверенный ответ на требование</li>
-              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#064E3B] shrink-0 mt-0.5" /> Проверку объёма истребуемых сведений</li>
-              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#064E3B] shrink-0 mt-0.5" /> Снижение риска передачи лишних документов</li>
-              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#064E3B] shrink-0 mt-0.5" /> Понятную правовую позицию</li>
-              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#064E3B] shrink-0 mt-0.5" /> Экономию времени бухгалтера и руководителя</li>
+              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" /> Юридически выверенный ответ на требование</li>
+              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" /> Проверку объёма истребуемых сведений</li>
+              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" /> Снижение риска передачи лишних документов</li>
+              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" /> Понятную правовую позицию</li>
+              <li className="flex gap-2.5"><Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" /> Экономию времени бухгалтера и руководителя</li>
             </ul>
           </div>
           <div className="bg-amber-50 border border-amber-100 rounded-2xl p-7">
@@ -160,12 +160,12 @@ function PriceCard({ tier, index }) {
       data-testid={`pricing-tier-${index}`}
       className={`relative rounded-3xl p-7 flex flex-col ${
         isDark
-          ? "bg-[#022C22] text-white border-2 border-[#064E3B] lg:-translate-y-3 shadow-2xl"
-          : "bg-white text-[#0F172A] border border-black/[0.06]"
+          ? "bg-[#16A34A] text-white border-2 border-[#16A34A] lg:-translate-y-3 shadow-[0_20px_60px_-15px_rgba(22,163,74,0.5)]"
+          : "bg-white text-[#0F172A] border border-[#E5E7EB]"
       }`}
     >
       {tier.popular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-amber-500 text-[#022C22] text-[10px] uppercase tracking-[0.18em] font-extrabold px-3 py-1.5 rounded-full shadow-lg">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-[#F59E0B] text-white text-[10px] uppercase tracking-[0.18em] font-extrabold px-3 py-1.5 rounded-full shadow-lg">
           <Sparkles className="w-3 h-3" />
           Популярный
         </div>
@@ -181,31 +181,31 @@ function PriceCard({ tier, index }) {
         <h3 className={`text-lg font-extrabold tracking-tight mb-1 ${isDark ? "text-white" : "text-[#0F172A]"}`}>
           {tier.name}
         </h3>
-        <p className={`text-xs ${isDark ? "text-white/60" : "text-[#475569]"}`}>{tier.desc}</p>
+        <p className={`text-xs ${isDark ? "text-white/80" : "text-[#475569]"}`}>{tier.desc}</p>
       </div>
 
       <div className="mb-2 flex items-baseline gap-1">
         <span className={`text-4xl font-extrabold tracking-tighter ${isDark ? "text-white" : "text-[#0F172A]"}`}>
           {tier.price}
         </span>
-        <span className={`text-base font-bold ${isDark ? "text-emerald-300" : "text-[#064E3B]"}`}>
+        <span className={`text-base font-bold ${isDark ? "text-white" : "text-[#16A34A]"}`}>
           {tier.unit}
         </span>
       </div>
-      <p className={`text-xs ${isDark ? "text-white/50" : "text-[#475569]"} mb-2`}>{tier.sub}</p>
+      <p className={`text-xs ${isDark ? "text-white/70" : "text-[#475569]"} mb-2`}>{tier.sub}</p>
       {tier.save && (
         <div className={`inline-flex self-start text-[10px] uppercase tracking-[0.14em] font-extrabold px-2 py-1 rounded-md mb-5 ${
-          isDark ? "bg-amber-500/20 text-amber-300" : "bg-amber-100 text-amber-700"
+          isDark ? "bg-white/20 text-white" : "bg-amber-50 text-amber-700"
         }`}>
           {tier.save}
         </div>
       )}
       {!tier.save && <div className="h-5 mb-5" />}
 
-      <ul className={`space-y-2.5 mb-7 text-[13px] flex-1 ${isDark ? "text-white/80" : "text-[#0F172A]"}`}>
+      <ul className={`space-y-2.5 mb-7 text-[13px] flex-1 ${isDark ? "text-white/95" : "text-[#0F172A]"}`}>
         {tier.features.map((f, i) => (
           <li key={i} className="flex gap-2">
-            <Check className={`w-4 h-4 shrink-0 mt-0.5 ${isDark ? "text-emerald-300" : "text-[#064E3B]"}`} />
+            <Check className={`w-4 h-4 shrink-0 mt-0.5 ${isDark ? "text-white" : "text-[#16A34A]"}`} />
             <span>{f}</span>
           </li>
         ))}
@@ -216,8 +216,8 @@ function PriceCard({ tier, index }) {
         data-testid={`pricing-cta-${index}`}
         className={`w-full rounded-full h-11 text-sm font-semibold ${
           isDark
-            ? "bg-amber-500 hover:bg-amber-400 text-[#022C22]"
-            : "bg-[#064E3B] hover:bg-[#022C22] text-white"
+            ? "bg-white hover:bg-green-50 text-[#16A34A]"
+            : "bg-[#16A34A] hover:bg-[#15803D] text-white"
         }`}
       >
         <a href="https://crm.fns.expert/register">{tier.cta}</a>
