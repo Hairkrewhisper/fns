@@ -1,0 +1,101 @@
+{
+  "project_context": {
+    "domain": "Tax & Legal B2B SaaS",
+    "brand_name": "fns.expert",
+    "theme": "Light",
+    "archetype": "5 (Luxury) & 4 (Swiss High-Contrast) Hybrid",
+    "vibe": "Authoritative, Premium, Protective, High-Tech",
+    "target_audience": "Accountants (35-55) & Business Owners (IP/OOO)"
+  },
+  "colors": {
+    "background_primary": "#F4F4F1",
+    "background_secondary": "#FFFFFF",
+    "background_dark_section": "#022C22",
+    "text_primary": "#0F172A",
+    "text_secondary": "#475569",
+    "text_inverse": "#F8FAFC",
+    "brand_primary": "#064E3B",
+    "brand_accent": "#D97706",
+    "danger_accent": "#DC2626",
+    "surface_glass": "rgba(255, 255, 255, 0.7)",
+    "surface_dark_glass": "rgba(2, 44, 34, 0.8)",
+    "border_subtle": "#E2E8F0",
+    "border_dark": "rgba(255, 255, 255, 0.1)"
+  },
+  "typography": {
+    "font_heading": "Manrope",
+    "font_body": "Onest",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-extrabold",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl tracking-tight font-bold",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "body": "text-base leading-relaxed",
+      "label": "text-xs tracking-[0.2em] uppercase font-bold"
+    }
+  },
+  "spacing_and_layout": {
+    "section_padding": "py-20 md:py-32",
+    "container_padding": "px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto",
+    "bento_gap": "gap-6 md:gap-8",
+    "border_radius": "rounded-2xl"
+  },
+  "components_strategy": {
+    "buttons": "Shadcn Button, customized. Primary: bg-[#064E3B] text-white hover:bg-[#022C22]. Secondary: Outline with border-[#064E3B]. All CTAs link to crm.fns.expert/register.",
+    "cards": "Cardless or flat cards with 1px subtle border (#E2E8F0) and zero shadow on Light theme. On Dark theme, 1px border (rgba(255,255,255,0.1)) with subtle inner glow.",
+    "inputs": "Shadcn Input/Select with customized focus ring to brand_primary.",
+    "accordion": "Shadcn Accordion for FAQ with generous padding and 1px bottom borders.",
+    "navigation": "Sticky crystal glass header (backdrop-blur-xl bg-[#F4F4F1]/80) border-b border-border/40."
+  },
+  "sections_and_content": [
+    {
+      "id": "hero",
+      "type": "dark_premium",
+      "instructions": "Full-width dark section (bg-[#022C22]). Headline: 'AI-сервис ответов на требования ФНС под ключ'. CTA: 'Начать работу' (links to CRM). Trust signals below CTA (500+ processed, 98% satisfied). Include the 'ocr_scanning' image overlapping the bottom edge to create depth.",
+      "image_urls": ["https://static.prod-images.emergentagent.com/jobs/ed9e8961-1b3f-4d90-a531-6ba9ce39270b/images/bacd168e84f506e4b6ea0d7a5c45c4c5cf0c172eccce0e9a3b0c023c599ad8e0.png"]
+    },
+    {
+      "id": "problem_statement",
+      "type": "high_contrast_alert",
+      "instructions": "Section highlighting the risks of ignoring FNS demands (fines, blocked accounts). Use a stark bento layout with red danger accents.",
+      "image_urls": ["https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvbnRyYWN0JTIwc2lnbmF0dXJlJTIwZGVza3xlbnwwfHx8fDE3Nzk3NDkzMzh8MA&ixlib=rb-4.1.0&q=85"]
+    },
+    {
+      "id": "how_it_works",
+      "type": "process_timeline",
+      "instructions": "6 steps (PDF upload -> OCR -> AI Analysis -> Lawyers -> Payment -> Response). Use a horizontal or vertical connected path with lucide-react icons."
+    },
+    {
+      "id": "features_and_types",
+      "type": "bento_grid",
+      "instructions": "Showcase types of FNS demands handled (VAT, 6-NDFL, wages, etc.) and AI capabilities. Mix wide and tall cards. Use subtle grey backgrounds for cards against white section bg."
+    },
+    {
+      "id": "pricing",
+      "type": "pricing_cards",
+      "instructions": "5 tiers. Highlight the 'Бизнес' (10 demands) tier. The popular tier should be slightly elevated and use the dark premium background."
+    },
+    {
+      "id": "faq",
+      "type": "accordion_list",
+      "instructions": "Shadcn accordion. Clean, left-aligned, readable."
+    },
+    {
+      "id": "final_cta",
+      "type": "dark_premium",
+      "instructions": "Dark bento box CTA driving to registration.",
+      "image_urls": ["https://static.prod-images.emergentagent.com/jobs/ed9e8961-1b3f-4d90-a531-6ba9ce39270b/images/e045fa03b655c7a247f9451cf6fb442d315745170c1ea88a138166d5a19e454c.png"]
+    }
+  ],
+  "accessibility_and_testing": {
+    "data_testids": "MANDATORY on all interactive elements (e.g., data-testid='hero-cta-button').",
+    "contrast": "Ensure white text on dark background meets APCA standards. Hover states must explicitly change text color if background changes."
+  },
+  "instructions_to_main_agent": [
+    "Build a long-scroll, responsive landing page using Tailwind and Shadcn components.",
+    "Do NOT use generic corporate blue. Stick to the Emerald/Stone palette provided.",
+    "Add lucide-react icons for visual anchors in the features and how-it-works sections.",
+    "Ensure all CTA buttons link to crm.fns.expert/register.",
+    "Make sure the typography looks premium - utilize letter-spacing (tracking-tight) for large headers.",
+    "The layout must feel asymmetric and modern, avoiding the 'bootstrap template' center-aligned monotony."
+  ]
+}
