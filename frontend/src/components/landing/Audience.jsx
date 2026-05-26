@@ -51,7 +51,7 @@ export default function Audience() {
             const Icon = it.icon;
             return (
               <div
-                key={i}
+                key={it.title}
                 data-testid={`audience-${i}`}
                 className="bg-white rounded-2xl p-6 border border-black/[0.04] hover:border-[#16A34A]/30 transition-all hover:-translate-y-1 duration-300"
               >
@@ -62,8 +62,8 @@ export default function Audience() {
                   {it.title}
                 </h3>
                 <ul className="space-y-2">
-                  {it.bullets.map((b, j) => (
-                    <li key={j} className="text-[13px] text-[#475569] leading-relaxed flex gap-2">
+                  {it.bullets.map((b) => (
+                    <li key={b} className="text-[13px] text-[#475569] leading-relaxed flex gap-2">
                       <span className="text-[#16A34A] mt-1.5 w-1 h-1 rounded-full bg-[#16A34A] shrink-0" />
                       {b}
                     </li>

@@ -118,7 +118,7 @@ export default function Pricing() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4 max-md:grid-cols-none max-md:flex max-md:overflow-x-auto max-md:snap-x-mobile max-md:-mx-4 max-md:px-4 max-md:pb-2 max-md:pt-3">
           {TIERS.map((t, i) => (
-            <div key={i} className="max-md:min-w-[280px] max-md:max-w-[280px] max-md:flex-shrink-0">
+            <div key={t.name} className="max-md:min-w-[280px] max-md:max-w-[280px] max-md:flex-shrink-0">
               <PriceCard tier={t} index={i} />
             </div>
           ))}
@@ -208,8 +208,8 @@ function PriceCard({ tier, index }) {
       {!tier.save && <div className="h-5 mb-5" />}
 
       <ul className={`space-y-2.5 mb-7 text-[13px] flex-1 ${isDark ? "text-white/95" : "text-[#0F172A]"}`}>
-        {tier.features.map((f, i) => (
-          <li key={i} className="flex gap-2">
+        {tier.features.map((f) => (
+          <li key={f} className="flex gap-2">
             <Check className={`w-4 h-4 shrink-0 mt-0.5 ${isDark ? "text-white" : "text-[#16A34A]"}`} />
             <span>{f}</span>
           </li>

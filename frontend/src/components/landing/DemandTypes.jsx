@@ -82,7 +82,7 @@ export default function DemandTypes() {
             const Icon = t.icon;
             return (
               <div
-                key={i}
+                key={t.title}
                 data-testid={`demand-type-${i}`}
                 className="group bg-[#F9FAFB] hover:bg-[#16A34A] border border-[#E5E7EB] rounded-2xl p-6 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(22,163,74,0.4)]"
               >

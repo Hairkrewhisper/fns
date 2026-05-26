@@ -44,7 +44,7 @@ export default function Comparison() {
           </div>
           {ROWS.map((r, i) => (
             <div
-              key={i}
+              key={r.label}
               className={`grid grid-cols-12 px-6 py-5 items-center text-sm ${
                 i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"
               }`}

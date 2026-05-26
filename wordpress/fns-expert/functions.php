@@ -20,7 +20,7 @@ if ( ! defined( 'FNS_EXPERT_VERSION' ) ) {
 	define( 'FNS_EXPERT_VERSION', '1.2.0' );
 }
 if ( ! defined( 'FNS_EXPERT_JS_HASH' ) ) {
-	define( 'FNS_EXPERT_JS_HASH', 'fa7376b4' );
+	define( 'FNS_EXPERT_JS_HASH', '2125932d' );
 }
 if ( ! defined( 'FNS_EXPERT_CSS_HASH' ) ) {
 	define( 'FNS_EXPERT_CSS_HASH', '2e71ac6b' );

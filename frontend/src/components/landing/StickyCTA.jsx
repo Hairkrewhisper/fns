@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MessageCircle, Phone, Sparkles, X } from "lucide-react";
+import { useScrollPast } from "@/hooks/use-ui-effects";
 
 export default function StickyCTA() {
-  const [visible, setVisible] = useState(false);
+  const visible = useScrollPast(600);
   const [closed, setClosed] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 600);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   if (closed) return null;
 

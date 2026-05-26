@@ -71,7 +71,7 @@ export default function HowItWorks() {
             const Icon = s.icon;
             return (
               <div
-                key={i}
+                key={s.n}
                 data-testid={`step-${i + 1}`}
                 className="bg-white p-7 lg:p-9 relative group hover:bg-[#F9FAFB] transition-colors duration-300"
               >

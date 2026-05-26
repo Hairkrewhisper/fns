@@ -66,7 +66,7 @@ export default function ProblemStatement() {
               const Icon = r.icon;
               return (
                 <div
-                  key={i}
+                  key={r.title}
                   data-testid={`risk-card-${i}`}
                   className="group relative bg-white border border-black/[0.06] rounded-2xl p-6 hover:border-[#DC2626]/30 transition-all hover:-translate-y-1 duration-300"
                 >
