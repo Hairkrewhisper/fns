@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       data-testid="hero-section"
-      className="relative hero-soft-bg overflow-hidden pt-28 lg:pt-36 pb-20 lg:pb-28"
+      className="relative hero-soft-bg overflow-hidden pt-24 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 lg:pb-28"
     >
       {/* Subtle grid background */}
       <div className="absolute inset-0 hero-grid-bg opacity-50" />
@@ -16,17 +16,17 @@ export default function Hero() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left content */}
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-100 mb-7">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-100 mb-5 sm:mb-7">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
               </span>
-              <span className="text-[11px] tracking-[0.18em] uppercase font-bold text-green-700">
+              <span className="text-[10px] sm:text-[11px] tracking-[0.16em] sm:tracking-[0.18em] uppercase font-bold text-green-700">
                 ai-сервис + налоговые юристы
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.04] font-extrabold tracking-tighter text-[#0F172A] text-balance">
+            <h1 className="text-[34px] leading-[1.05] sm:text-5xl lg:text-[64px] lg:leading-[1.04] font-extrabold tracking-tighter text-[#0F172A] text-balance">
               Ответы на требования
               <br />
               <span className="gradient-text-green">ИФНС под ключ</span>
@@ -34,19 +34,19 @@ export default function Hero() {
               <span className="text-[#475569] font-medium">за 2 рабочих дня</span>
             </h1>
 
-            <p className="mt-7 text-lg text-[#475569] max-w-xl leading-relaxed">
+            <p className="mt-5 sm:mt-7 text-base sm:text-lg text-[#475569] max-w-xl leading-relaxed">
               Загрузите PDF из ФНС — наш AI извлечёт суть, налоговые юристы подготовят
-              юридически выверенный ответ. Без шаблонов и переплат за разовые консультации.
+              юридически выверенный ответ. Без шаблонов и переплат.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row gap-3">
               <Button
                 asChild
                 data-testid="hero-primary-cta"
                 size="lg"
-                className="bg-[#16A34A] text-white hover:bg-[#15803D] rounded-full h-14 px-7 text-base font-semibold pulse-green"
+                className="bg-[#16A34A] text-white hover:bg-[#15803D] rounded-full h-14 px-7 text-base font-semibold pulse-green w-full sm:w-auto"
               >
-                <a href="https://crm.fns.expert/register" className="inline-flex items-center gap-2">
+                <a href="https://crm.fns.expert/register" className="inline-flex items-center justify-center gap-2">
                   <Sparkles className="w-5 h-5" />
                   Начать бесплатно
                 </a>
@@ -56,9 +56,9 @@ export default function Hero() {
                 data-testid="hero-secondary-cta"
                 variant="outline"
                 size="lg"
-                className="border-[#E5E7EB] text-[#0F172A] bg-white hover:bg-green-50 hover:border-green-200 hover:text-[#15803D] rounded-full h-14 px-7 text-base font-semibold"
+                className="border-[#E5E7EB] text-[#0F172A] bg-white hover:bg-green-50 hover:border-green-200 hover:text-[#15803D] rounded-full h-14 px-7 text-base font-semibold w-full sm:w-auto"
               >
-                <a href="#how" className="inline-flex items-center gap-2">
+                <a href="#how" className="inline-flex items-center justify-center gap-2">
                   Как это работает
                   <ArrowRight className="w-4 h-4" />
                 </a>
@@ -66,7 +66,7 @@ export default function Hero() {
             </div>
 
             {/* Trust signals */}
-            <div className="mt-10 grid grid-cols-3 gap-6 max-w-lg">
+            <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
               <Stat value="500+" label="требований обработано" />
               <Stat value="2 дня" label="среднее время ответа" />
               <Stat value="98%" label="довольных клиентов" />
@@ -74,7 +74,7 @@ export default function Hero() {
           </div>
 
           {/* Right side: scan card */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             <ScanCard />
           </div>
         </div>
@@ -96,8 +96,8 @@ export default function Hero() {
 function Stat({ value, label }) {
   return (
     <div>
-      <div className="text-2xl lg:text-3xl font-extrabold tracking-tight text-[#0F172A]">{value}</div>
-      <div className="text-[11px] uppercase tracking-[0.14em] mt-1 text-[#475569] font-semibold leading-snug">
+      <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-[#0F172A]">{value}</div>
+      <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.14em] mt-1 text-[#475569] font-semibold leading-snug">
         {label}
       </div>
     </div>

@@ -68,7 +68,7 @@ export default function FAQ() {
     <section
       id="faq"
       data-testid="faq-section"
-      className="bg-[#F9FAFB] py-20 lg:py-32"
+      className="bg-[#F9FAFB] py-14 sm:py-20 lg:py-32"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 mb-14">

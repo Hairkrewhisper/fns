@@ -56,7 +56,7 @@ export default function DemandTypes() {
     <section
       id="types"
       data-testid="demand-types"
-      className="bg-white py-20 lg:py-32"
+      className="bg-white py-14 sm:py-20 lg:py-32"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 mb-14">

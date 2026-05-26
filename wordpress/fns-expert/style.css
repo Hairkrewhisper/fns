@@ -1,0 +1,38 @@
+/*
+Theme Name: FNS Expert
+Theme URI: https://fns.expert
+Author: fns.expert
+Author URI: https://fns.expert
+Description: Премиальный продающий лендинг для сервиса ответов на требования ИФНС. AI + OCR + налоговые юристы. Светлая премиум-палитра, мобильная адаптация (2026), SEO-оптимизация.
+Version: 1.0.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: fns-expert
+Tags: business, landing-page, custom-colors, custom-logo, responsive, accountancy, tax, fns
+*/
+
+/* === Theme reset (basic, чтобы не конфликтовало с WP) === */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+}
+
+#wpadminbar {
+    z-index: 999999;
+}
+
+/* React mount point */
+#root {
+    min-height: 100vh;
+}
+
+/* Скрываем дефолтные WP-элементы, если они вдруг подмешаются */
+.wp-site-blocks > header,
+.wp-site-blocks > footer {
+    display: none;
+}
+
+/* === Все остальные стили (Tailwind + custom) грузятся из assets/css/main.css === */

@@ -153,6 +153,40 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Mobile 2026: Safe-area for notched devices */
+@supports (padding: max(0px)) {
+    .safe-bottom {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+    .safe-top {
+        padding-top: max(1rem, env(safe-area-inset-top));
+    }
+}
+
+/* Mobile 2026: snap scroll for horizontal carousels */
+.snap-x-mobile {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.snap-x-mobile::-webkit-scrollbar { display: none; }
+.snap-x-mobile > * {
+    scroll-snap-align: start;
+}
+
+/* Mobile 2026: smooth touch ripple */
+.touch-ripple {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+/* Mobile 2026: reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee, .pulse-green, .animate-fade-up, .animate-ping {
+        animation: none !important;
+    }
+}
+
 @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }

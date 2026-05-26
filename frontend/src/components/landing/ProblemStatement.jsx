@@ -31,7 +31,7 @@ export default function ProblemStatement() {
   return (
     <section
       data-testid="problem-section"
-      className="bg-[#F9FAFB] py-20 lg:py-32 relative overflow-hidden"
+      className="bg-[#F9FAFB] py-14 sm:py-20 lg:py-32 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">

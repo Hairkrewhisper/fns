@@ -100,7 +100,7 @@ export default function Pricing() {
     <section
       id="pricing"
       data-testid="pricing-section"
-      className="bg-white py-20 lg:py-32"
+      className="bg-white py-14 sm:py-20 lg:py-32"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12 lg:mb-16">
@@ -116,10 +116,15 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4 max-md:grid-cols-none max-md:flex max-md:overflow-x-auto max-md:snap-x-mobile max-md:-mx-4 max-md:px-4 max-md:pb-2 max-md:pt-3">
           {TIERS.map((t, i) => (
-            <PriceCard key={i} tier={t} index={i} />
+            <div key={i} className="max-md:min-w-[280px] max-md:max-w-[280px] max-md:flex-shrink-0">
+              <PriceCard tier={t} index={i} />
+            </div>
           ))}
+        </div>
+        <div className="md:hidden mt-3 text-center text-xs text-[#94A3B8] font-medium">
+          ← листайте тарифы →
         </div>
 
         <div className="mt-12 grid md:grid-cols-2 gap-4 lg:gap-5">

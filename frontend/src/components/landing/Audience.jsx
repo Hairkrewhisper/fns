@@ -32,7 +32,7 @@ export default function Audience() {
   return (
     <section
       data-testid="audience-section"
-      className="bg-[#F9FAFB] py-20 lg:py-32"
+      className="bg-[#F9FAFB] py-14 sm:py-20 lg:py-32"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14">

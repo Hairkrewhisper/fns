@@ -14,7 +14,7 @@ export default function Comparison() {
   return (
     <section
       data-testid="comparison"
-      className="bg-[#F9FAFB] py-20 lg:py-32"
+      className="bg-[#F9FAFB] py-14 sm:py-20 lg:py-32"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">

@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer data-testid="site-footer" className="bg-[#F9FAFB] text-[#475569] border-t border-[#E5E7EB] pt-16 pb-10">
+    <footer data-testid="site-footer" className="bg-[#F9FAFB] text-[#475569] border-t border-[#E5E7EB] pt-16 pb-28 lg:pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14">
           {/* Logo + about */}
           <div className="col-span-2 lg:col-span-4">
             <div className="flex items-center gap-2.5 mb-5">
-              <img src="/images/fns-logo.png" alt="fns.expert" className="h-11 w-11 object-contain" />
+              <img src={typeof window !== "undefined" && window.FNS_THEME?.assetsUrl ? `${window.FNS_THEME.assetsUrl}/images/fns-logo.png` : "/images/fns-logo.png"} alt="fns.expert" className="h-11 w-11 object-contain" />
               <span className="font-extrabold text-[#0F172A] text-base tracking-tight">fns.expert</span>
             </div>
             <p className="text-sm leading-relaxed mb-5 max-w-xs">

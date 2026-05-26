@@ -50,10 +50,10 @@ export default function HowItWorks() {
     <section
       id="how"
       data-testid="how-it-works"
-      className="bg-white py-20 lg:py-32 relative"
+      className="bg-white py-14 sm:py-20 lg:py-32 relative"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14 lg:mb-20">
+        <div className="max-w-3xl mb-10 sm:mb-14 lg:mb-20">
           <div className="text-[11px] tracking-[0.22em] uppercase font-bold text-[#16A34A] mb-5">
             · 6 этапов
           </div>

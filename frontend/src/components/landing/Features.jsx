@@ -5,7 +5,7 @@ export default function Features() {
     <section
       id="features"
       data-testid="features-section"
-      className="bg-[#F9FAFB] py-20 lg:py-32"
+      className="bg-[#F9FAFB] py-14 sm:py-20 lg:py-32"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
