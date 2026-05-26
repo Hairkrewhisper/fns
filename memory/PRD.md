@@ -38,13 +38,25 @@
 - ✅ Светлая премиум-палитра c зелёным акцентом `#16A34A` (совпадает с crm.fns.expert)
 - ✅ Логотип `fns-logo.png` + favicon
 - ✅ Mobile optimization (2026 trends): нижний CTA-бар, snap-scroll тарифов, safe-area
-- ✅ **2026 fullscreen burger menu** — тёмный полноэкранный оверлей, нумерация 01–06, slide-stagger анимации, ArrowUpRight, зелёные орбы на фоне
-- ✅ **Featured testimonial** — главный кейс месяца с фото-скриншотом отзыва, метриками и автором
-- ✅ **Реальные клиенты** — отдельная секция с 9 фото-отзывами из `fns.expert/otziv.html` + masonry + lightbox
-- ✅ **Lead-magnet в Hero** (Feb 2026 update) — интерактивный drag-and-drop для загрузки PDF требования; при выборе/перетаскивании файла → переход на `crm.fns.expert/register?intent=upload&utm_*=...&filename=...` с UTM-метками и именем файла для CRM
-- ✅ **WordPress тема по Codex** (v1.2.0): 26 файлов, полная Codex-совместимость
-- ✅ Воронка продаж проверена: все CTA ведут на правильные URL, `crm.fns.expert` отвечает 200
-- ✅ Testing agent 100% (55/55 тестов)
+- ✅ **2026 fullscreen burger menu** — выделено в `BurgerMenuOverlay.jsx`
+- ✅ **Featured testimonial** — главный кейс месяца с фото и метриками
+- ✅ **Реальные клиенты** — секция с 9 фото-отзывами из `fns.expert/otziv.html` + masonry + lightbox с keyboard-навигацией
+- ✅ **Lead-magnet в Hero** — drag-and-drop PDF с UTM-метками → CRM
+- ✅ **WordPress тема по Codex** (v1.2.0): 26 файлов
+
+## Code quality refactor (Feb 2026)
+- ✅ Header.jsx сокращён с 293 → 144 строк (выделены `Logo`, `DesktopNav`, `Actions`, `BurgerToggle`, `BurgerMenuOverlay`)
+- ✅ LeadMagnetCard.jsx вынесен в отдельный файл с кастомным хуком `useUploadFlow` и подкомпонентами (`Dropzone`, `IdleContent`, `BusyContent`, `TrustRow`)
+- ✅ Testimonials.jsx разбит на `FeaturedTestimonialCard`, `RealClientsGallery`, `OtherQuotesGrid`, `TestimonialLightbox`
+- ✅ Hero.jsx разбит на `HeroContent`, `Eyebrow`, `Headline`, `Description`, `CtaRow`, `StatsRow`, `FeatureCell`
+- ✅ Новые переиспользуемые хуки: `useScrollPast`, `useBodyScrollLock`, `useEscapeKey` в `/hooks/use-ui-effects.js`
+- ✅ Все React-ключи стабильные (item.id / item.title / item.href вместо array index)
+- ✅ Данные вынесены в `testimonials-data.js` с id-полями
+- ✅ ESLint без замечаний
+
+## Test results
+- Iteration 1 (initial): 55/55 ✅
+- Iteration 2 (after refactor regression): 60/61 ✅ (1 false-positive — span text concat)
 
 ## WordPress Theme Codex compliance
 - `style.css` — полный обязательный header
