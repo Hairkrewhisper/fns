@@ -4,70 +4,83 @@
 Создать современную премиальную продающую тему для основного сайта WordPress fns.expert.
 Сервис: AI-сервис ответов на требования ИФНС под ключ (OCR + AI-анализ + налоговые юристы).
 Конкуренты: buhsoft.ru, kontur.ru, klerk.ru, taxcom.ru, glavbukh.ru, 1c.ru и др.
-Целевые ключевики: ответ на требование фнс, образец письма в фнс, срок ответа на требование фнс, как ответить на требование через ЛК налогоплательщика, ответ на требование о расхождении 6-НДФЛ и РСВ, ответ на требование о зарплате ниже МРОТ, мотивированный отказ, и т.д.
+Цель: продающий React-лендинг → готовая WordPress-тема, строго по WP Codex.
 
 ## Architecture
-- React 19 + Tailwind + Shadcn/UI
-- Полностью статичный лендинг (без бэкенда). CTA-кнопки ведут на crm.fns.expert/register, crm.fns.expert/login, tel:, mailto:, t.me, wa.me.
-- Может быть адаптирован под WordPress: вёрстка в Tailwind легко конвертируется в HTML/CSS, либо использовать сборку через `yarn build` и интеграцию как статичный шаблон.
+- **Frontend**: React 19 + Tailwind + Shadcn/UI (Manrope/Onest/JetBrains Mono шрифты).
+- **WordPress Theme**: `/app/wordpress/fns-expert/` — упакована в `fns-expert.zip`, соответствует WP Codex.
+- **CTA**: ведут на внешние URL → `crm.fns.expert/register`, `crm.fns.expert/login`, `tel:`, `mailto:`, `t.me`, `wa.me`.
 
 ## Design system
-- Палитра: Emerald (#064E3B / #022C22) + Stone (#F4F4F1) + Amber accent (#D97706) + Danger (#DC2626)
-- Шрифты: Manrope (заголовки), Onest (тело), JetBrains Mono (цифры/коды статей НК)
-- Стиль: Luxury + Swiss High-Contrast (Archetype 4/5)
-- Отказ от банального корпоративного синего, чтобы выделиться среди Контура/СБИС/БухСофта.
+- **Палитра** (light theme, совпадает с crm.fns.expert): Emerald `#16A34A` / `#15803D` (CTA), Slate `#0F172A` (текст), Stone `#F9FAFB` (фон карточек), Amber `#F59E0B` (popular-метка), Danger `#DC2626`.
+- **Шрифты**: Manrope (заголовки), Onest (тело), JetBrains Mono (цифры/коды статей НК).
+- **Стиль**: Premium + Swiss high-contrast.
 
-## User personas
-1. Главный бухгалтер ООО (35–55 лет) — снимает рутину, защищает себя перед руководством
-2. ИП на УСН — нужно быстро и недорого
-3. Руководитель ООО/директор — защита бизнеса, снижение доначислений
-4. Финансовый директор холдинга — единый стандарт, безлимит
-5. Бухгалтерский аутсорсер — белый-лейбл, скидки
+## Sections (15 секций)
+1. Header — fixed, с 2026 fullscreen burger menu (mobile)
+2. Hero — premium с зелёным акцентом + scan-card OCR-аналитики
+3. TrustBar (marquee)
+4. ProblemStatement
+5. HowItWorks (6 этапов)
+6. Features (bento)
+7. DemandTypes (8 типов)
+8. Audience (5 сегментов)
+9. Pricing (5 тарифов)
+10. Comparison
+11. **Testimonials** (featured + 9 фото с otziv.html + текстовые отзывы) — Feb 2026 update
+12. FAQ (15 вопросов)
+13. FinalCTA
+14. Footer
+15. StickyCTA + Mobile Bottom Bar
 
-## Sections implemented
-1. **Header** — fixed, контекстная адаптация цветов (light/dark при скролле)
-2. **Hero** — тёмный premium с эмеральд градиентом, scan-card с OCR-аналитикой и floating-карточкой "Ответ готов"
-3. **TrustBar** — marquee с доверительными метками (152-ФЗ, ЭЦП, эксперты с разрядом)
-4. **ProblemStatement** — 4 risk-карточки (штраф, блокировка счёта, ВНП, доначисления)
-5. **HowItWorks** — 6 этапов с иконками lucide-react (Upload → OCR → AI → Юристы → Оплата → Готово)
-6. **Features** — bento grid: AI-анализ (big dark card с чипами статей НК), OCR 99.4%, юристы, дедлайны, статусы
-7. **DemandTypes** — 8 типов требований (ст. 93, 93.1, НДС, 6-НДФЛ/РСВ, МРОТ, среднеотраслевая, ИП-зарплатник, отказ)
-8. **Audience** — 5 сегментов аудитории
-9. **Pricing** — 5 тарифов (Разовый 6 000 ₽ / Старт 27 000 ₽ / **Бизнес 48 000 ₽** popular / Поток 84 000 ₽ / Безлимит 199 000 ₽/мес)
-10. **Comparison** — сравнительная таблица fns.expert vs частный юрист vs бухгалтерское ПО
-11. **Testimonials** — 3 отзыва + рейтинг 4.96
-12. **FAQ** — 15 вопросов под поисковые запросы (что такое требование, виды, сроки, штрафы, как ответить через ЛК, мотивированный отказ, и т.д.)
-13. **FinalCTA** — тёмная карточка с контактами (телефон, Telegram-бот, WhatsApp, email)
-14. **Footer** — реквизиты ИП Пашковский, ссылки, контакты
-15. **StickyCTA** — плавающая WhatsApp-кнопка, появляется при скролле
+## What's implemented (Feb 2026)
+- ✅ Все 15 секций — полностью функциональны
+- ✅ Светлая премиум-палитра c зелёным акцентом `#16A34A` (совпадает с crm.fns.expert)
+- ✅ Логотип `fns-logo.png` + favicon
+- ✅ Mobile optimization (2026 trends): нижний CTA-бар, snap-scroll тарифов, safe-area
+- ✅ **2026 fullscreen burger menu** — тёмный полноэкранный оверлей, нумерация 01–06, slide-stagger анимации, ArrowUpRight, зелёные орбы на фоне
+- ✅ **Featured testimonial** — главный кейс месяца с фото-скриншотом отзыва (рекомендательное письмо ООО ТЕМП), метриками (Штраф 30 000 ₽ предотвращён / 2 дня / Скриншот клиента) и автором (Елена Севастьянова)
+- ✅ **Реальные клиенты** — отдельная секция с 9 фото-отзывами из `fns.expert/otziv.html` + masonry-сетка + lightbox с навигацией
+- ✅ **WordPress тема по Codex**: 26 файлов
+  - style.css с полным header (Theme Name, URI, Author, Version, License, Text Domain, Tags)
+  - functions.php с правильными хуками (after_setup_theme, wp_enqueue_scripts, customize_register), i18n, sanitization
+  - Шаблоны: index.php, front-page.php, page-landing.php, page.php, single.php, 404.php
+  - Партиалы: header.php, footer.php, sidebar.php, searchform.php
+  - screenshot.png (1200×900), README.md, /languages/, /assets/.htaccess
+  - Customizer API — настройка CRM URL из админки
+  - HTML5 support, automatic-feed-links, responsive-embeds, align-wide, editor-styles
+  - skip-link для accessibility
+- ✅ Воронка продаж проверена: все CTA (15+) ведут на правильные URL, `crm.fns.expert` отвечает 200
+- ✅ Testing agent 100% (55/55 тестов)
 
-## SEO-optimization
-- Текст оптимизирован под целевые запросы: "ответ на требование фнс", "срок ответа на требование налоговой 2025", "ответ на требование о расхождении 6-НДФЛ и РСВ", "ответ на требование о зарплате ниже среднеотраслевой", "мотивированный отказ", "как ответить на требование через ЛК налогоплательщика ИП", и др.
-- FAQ-секция охватывает 15+ вариаций запросов.
-- Meta description + title оптимизированы.
-
-## What's implemented (Feb 2026 — initial MVP)
-- ✅ Premium landing page (15 секций) — полностью функциональный, адаптивный
-- ✅ Все CTA ведут на crm.fns.expert/register или crm.fns.expert/login
-- ✅ Контакты: телефон +7 985 488-38-89, Telegram-бот @FNS_Expert_bot, WhatsApp, info@fns.expert
-- ✅ Контрастный header, sticky на скролле
-- ✅ Mobile-responsive
+## WordPress Theme Codex compliance
+- `style.css` — полный обязательный header
+- Префиксы функций `fns_expert_*` и констант `FNS_EXPERT_*`
+- ABSPATH guard во всех `.php`-файлах
+- Все строки i18n-готовы (`__()`, `esc_html__()` с domain `fns-expert`)
+- Sanitization: `esc_url()`, `esc_attr()`, `esc_html()`
+- Template hierarchy: front-page → index → 404 → page → single
+- GPL v2+ лицензия
 
 ## Prioritized backlog
 ### P1 (next iteration)
-- Блог-секция со статьями под SEO (по ключевым запросам "образец ответа на требование", "что делать если ИФНС...")
-- Калькулятор стоимости (выбор пакета + количество требований)
+- Блог-секция со статьями под SEO (по запросам "образец ответа на требование", "что делать если ИФНС...")
+- Калькулятор стоимости (выбор пакета + кол-во требований)
 - Форма "Заявка на бесплатный анализ" с интеграцией email/Telegram
 
 ### P2
-- Lead-magnet: PDF-чеклист "Как правильно ответить на требование ФНС за 5 шагов"
-- Сравнение с конкретными конкурентами (Контур.Экстерн, СБИС)
+- Lead-magnet: PDF-чеклист "Как ответить на требование за 5 шагов"
 - Кейсы (case-study) с цифрами доначислений, которые удалось снять
-- Интеграция с CRM для отслеживания заявок
-- A/B-тестирование вариантов hero-заголовка
+- Интеграция Яндекс.Метрики + ВК Pixel
+- WPML/Polylang для многоязычности
 
 ### P3
-- Подключение Яндекс.Метрики и пиксель ВКонтакте
-- Webform для бесплатной консультации с reCAPTCHA
-- Многоязычность (EN для иностранных компаний с филиалами в РФ)
-- Реализация на WordPress (адаптация Tailwind → классическая тема)
+- A/B тестирование hero-заголовка
+- ReCAPTCHA для контактных форм
+- AMP-версия для Яндекса
+
+## Files of reference
+- `/app/frontend/src/components/landing/*` (15 секций)
+- `/app/wordpress/fns-expert/` (Codex-compliant theme)
+- `/app/wordpress/fns-expert.zip` (готов к загрузке в WP)
+- `/app/test_reports/iteration_1.json` (100% pass)
