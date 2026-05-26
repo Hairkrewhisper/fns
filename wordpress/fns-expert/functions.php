@@ -20,10 +20,10 @@ if ( ! defined( 'FNS_EXPERT_VERSION' ) ) {
 	define( 'FNS_EXPERT_VERSION', '1.2.0' );
 }
 if ( ! defined( 'FNS_EXPERT_JS_HASH' ) ) {
-	define( 'FNS_EXPERT_JS_HASH', '2125932d' );
+	define( 'FNS_EXPERT_JS_HASH', '6610c3f5' );
 }
 if ( ! defined( 'FNS_EXPERT_CSS_HASH' ) ) {
-	define( 'FNS_EXPERT_CSS_HASH', '2e71ac6b' );
+	define( 'FNS_EXPERT_CSS_HASH', '903d94b8' );
 }
 
 /**

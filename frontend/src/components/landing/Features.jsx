@@ -92,17 +92,18 @@ export default function Features() {
             title="7 этапов в реальном времени"
             desc="Видите, где сейчас ваше требование. Без чёрных ящиков."
           />
-          {/* CTA card */}
-          <div className="md:col-span-3 bg-white border border-black/[0.06] rounded-3xl p-7 lg:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#16A34A] text-white flex items-center justify-center">
+          {/* CTA card — full-width row */}
+          <div className="md:col-span-6 bg-gradient-to-r from-[#0F172A] to-[#064E3B] text-white rounded-3xl p-7 lg:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative overflow-hidden">
+            <div className="absolute -top-24 -right-10 w-72 h-72 rounded-full bg-[#16A34A]/30 blur-3xl pointer-events-none" />
+            <div className="relative flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-[#16A34A] text-white flex items-center justify-center shrink-0">
                 <Package className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-xl font-extrabold tracking-tight text-[#0F172A]">
+                <h3 className="text-xl lg:text-2xl font-extrabold tracking-tight text-white">
                   Абонентские пакеты
                 </h3>
-                <p className="text-sm text-[#475569] mt-1">
+                <p className="text-sm text-white/70 mt-1">
                   Экономия до 30% и приоритетная обработка
                 </p>
               </div>
@@ -110,7 +111,7 @@ export default function Features() {
             <a
               href="#pricing"
               data-testid="features-pricing-link"
-              className="inline-flex items-center gap-1.5 text-sm font-bold text-[#16A34A] hover:text-[#15803D] group"
+              className="relative inline-flex items-center gap-2 bg-[#16A34A] hover:bg-[#15803D] text-white text-sm font-bold rounded-full px-5 h-11 transition-colors group"
             >
               Смотреть тарифы
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -124,7 +125,7 @@ export default function Features() {
 
 function FeatureCard({ icon, title, desc }) {
   return (
-    <div className="bg-white border border-black/[0.06] rounded-3xl p-7 hover:border-[#16A34A]/20 hover:-translate-y-1 transition-all duration-300">
+    <div className="md:col-span-2 bg-white border border-black/[0.06] rounded-3xl p-7 hover:border-[#16A34A]/20 hover:-translate-y-1 transition-all duration-300">
       <div className="w-11 h-11 rounded-xl bg-green-50 text-[#16A34A] flex items-center justify-center mb-5">
         {icon}
       </div>
