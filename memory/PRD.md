@@ -39,18 +39,11 @@
 - ✅ Логотип `fns-logo.png` + favicon
 - ✅ Mobile optimization (2026 trends): нижний CTA-бар, snap-scroll тарифов, safe-area
 - ✅ **2026 fullscreen burger menu** — тёмный полноэкранный оверлей, нумерация 01–06, slide-stagger анимации, ArrowUpRight, зелёные орбы на фоне
-- ✅ **Featured testimonial** — главный кейс месяца с фото-скриншотом отзыва (рекомендательное письмо ООО ТЕМП), метриками (Штраф 30 000 ₽ предотвращён / 2 дня / Скриншот клиента) и автором (Елена Севастьянова)
-- ✅ **Реальные клиенты** — отдельная секция с 9 фото-отзывами из `fns.expert/otziv.html` + masonry-сетка + lightbox с навигацией
-- ✅ **WordPress тема по Codex**: 26 файлов
-  - style.css с полным header (Theme Name, URI, Author, Version, License, Text Domain, Tags)
-  - functions.php с правильными хуками (after_setup_theme, wp_enqueue_scripts, customize_register), i18n, sanitization
-  - Шаблоны: index.php, front-page.php, page-landing.php, page.php, single.php, 404.php
-  - Партиалы: header.php, footer.php, sidebar.php, searchform.php
-  - screenshot.png (1200×900), README.md, /languages/, /assets/.htaccess
-  - Customizer API — настройка CRM URL из админки
-  - HTML5 support, automatic-feed-links, responsive-embeds, align-wide, editor-styles
-  - skip-link для accessibility
-- ✅ Воронка продаж проверена: все CTA (15+) ведут на правильные URL, `crm.fns.expert` отвечает 200
+- ✅ **Featured testimonial** — главный кейс месяца с фото-скриншотом отзыва, метриками и автором
+- ✅ **Реальные клиенты** — отдельная секция с 9 фото-отзывами из `fns.expert/otziv.html` + masonry + lightbox
+- ✅ **Lead-magnet в Hero** (Feb 2026 update) — интерактивный drag-and-drop для загрузки PDF требования; при выборе/перетаскивании файла → переход на `crm.fns.expert/register?intent=upload&utm_*=...&filename=...` с UTM-метками и именем файла для CRM
+- ✅ **WordPress тема по Codex** (v1.2.0): 26 файлов, полная Codex-совместимость
+- ✅ Воронка продаж проверена: все CTA ведут на правильные URL, `crm.fns.expert` отвечает 200
 - ✅ Testing agent 100% (55/55 тестов)
 
 ## WordPress Theme Codex compliance

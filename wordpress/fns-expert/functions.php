@@ -17,13 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Theme version & asset hashes — обновляются при пересборке React.
  */
 if ( ! defined( 'FNS_EXPERT_VERSION' ) ) {
-	define( 'FNS_EXPERT_VERSION', '1.1.0' );
+	define( 'FNS_EXPERT_VERSION', '1.2.0' );
 }
 if ( ! defined( 'FNS_EXPERT_JS_HASH' ) ) {
-	define( 'FNS_EXPERT_JS_HASH', '7cee4a74' );
+	define( 'FNS_EXPERT_JS_HASH', 'fa7376b4' );
 }
 if ( ! defined( 'FNS_EXPERT_CSS_HASH' ) ) {
-	define( 'FNS_EXPERT_CSS_HASH', 'a13a4d2a' );
+	define( 'FNS_EXPERT_CSS_HASH', '2e71ac6b' );
 }
 
 /**
