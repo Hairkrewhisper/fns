@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Sparkles, ArrowRight } from "lucide-react";
+import { Phone, Sparkles, ArrowUpRight, MessageCircle, Mail } from "lucide-react";
 import { assetUrl } from "@/lib/assets";
 
 const NAV = [
-  { label: "Услуги", href: "#features", desc: "OCR · AI · юристы" },
-  { label: "Как работает", href: "#how", desc: "6 этапов под ключ" },
-  { label: "Тарифы", href: "#pricing", desc: "от 6 000 ₽" },
-  { label: "Виды требований", href: "#types", desc: "ст. 93, НДС, МРОТ" },
-  { label: "FAQ", href: "#faq", desc: "15 ответов" },
+  { num: "01", label: "Услуги", href: "#features", desc: "OCR · AI · юристы" },
+  { num: "02", label: "Как это работает", href: "#how", desc: "6 этапов под ключ" },
+  { num: "03", label: "Тарифы", href: "#pricing", desc: "от 6 000 ₽" },
+  { num: "04", label: "Виды требований", href: "#types", desc: "ст. 93, НДС, МРОТ" },
+  { num: "05", label: "Отзывы", href: "#testimonials", desc: "реальные клиенты" },
+  { num: "06", label: "FAQ", href: "#faq", desc: "15 ответов" },
 ];
 
 export default function Header() {
@@ -21,18 +22,25 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu open
+  // Lock body scroll when menu open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
+
+  // Close on Escape
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <>
       <header
         data-testid="site-header"
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-          scrolled || open
+          scrolled
             ? "bg-white/90 backdrop-blur-xl border-b border-[#E5E7EB] shadow-[0_2px_20px_-8px_rgba(0,0,0,0.05)]"
             : "bg-transparent"
         }`}
@@ -40,7 +48,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <a href="#" data-testid="logo-link" className="flex items-center gap-2.5 group touch-ripple">
+            <a href="#" data-testid="logo-link" className="flex items-center gap-2.5 group">
               <img
                 src={assetUrl("/images/fns-logo.png")}
                 alt="fns.expert"
@@ -56,7 +64,7 @@ export default function Header() {
 
             {/* Nav - desktop */}
             <nav className="hidden lg:flex items-center gap-8">
-              {NAV.map((n) => (
+              {NAV.slice(0, 5).map((n) => (
                 <a
                   key={n.href}
                   href={n.href}
@@ -95,99 +103,190 @@ export default function Header() {
                   Начать
                 </a>
               </Button>
+
+              {/* 2026 Burger button — animated bars to X */}
               <button
                 data-testid="mobile-menu-toggle"
                 onClick={() => setOpen(!open)}
-                className="lg:hidden touch-ripple flex items-center justify-center w-11 h-11 -mr-2 text-[#0F172A] rounded-full active:bg-black/5 transition-colors"
+                className={`lg:hidden relative flex flex-col items-center justify-center w-11 h-11 -mr-1 rounded-full transition-colors duration-300 ${
+                  open ? "bg-[#0F172A]" : "bg-[#0F172A]"
+                }`}
                 aria-label={open ? "Закрыть меню" : "Открыть меню"}
+                aria-expanded={open}
               >
-                {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                <span
+                  className={`block h-[2px] w-5 bg-white rounded-full transition-all duration-300 ${
+                    open ? "translate-y-[3px] rotate-45" : "-translate-y-[3px]"
+                  }`}
+                />
+                <span
+                  className={`block h-[2px] w-5 bg-white rounded-full transition-all duration-300 ${
+                    open ? "-translate-y-[3px] -rotate-45" : "translate-y-[3px]"
+                  }`}
+                />
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Sheet Menu — 2026 fullscreen drawer */}
+      {/* === 2026 Fullscreen Burger Menu === */}
       <div
-        data-testid="mobile-menu-sheet"
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        data-testid="mobile-menu-fullscreen"
+        className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${
+          open ? "visible opacity-100" : "invisible opacity-0"
         }`}
         aria-hidden={!open}
       >
-        <div
-          className="absolute inset-0 bg-[#0F172A]/30 backdrop-blur-sm"
-          onClick={() => setOpen(false)}
-        />
-        <div
-          className={`absolute inset-x-0 top-16 bottom-0 bg-white overflow-y-auto safe-bottom transition-transform duration-300 ${
-            open ? "translate-y-0" : "translate-y-4"
-          }`}
-        >
-          <div className="px-5 py-6 pb-32">
-            <div className="text-[10px] uppercase tracking-[0.22em] font-bold text-[#94A3B8] mb-4 px-2">
-              · меню
+        {/* Background — dark with green orb */}
+        <div className="absolute inset-0 bg-[#0F172A]">
+          <div
+            className={`absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-[#16A34A]/30 blur-[120px] transition-transform duration-700 ${
+              open ? "scale-100" : "scale-0"
+            }`}
+          />
+          <div
+            className={`absolute -bottom-40 -left-20 w-[420px] h-[420px] rounded-full bg-emerald-400/20 blur-[100px] transition-transform duration-700 delay-100 ${
+              open ? "scale-100" : "scale-0"
+            }`}
+          />
+          {/* subtle grid */}
+          <div
+            className="absolute inset-0 opacity-[0.07]"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)",
+              backgroundSize: "44px 44px",
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative h-full w-full overflow-y-auto pt-20 pb-10 safe-bottom">
+          <div className="px-5 sm:px-8 max-w-md mx-auto">
+            <div
+              className={`text-[10px] uppercase tracking-[0.28em] font-bold text-[#16A34A] mb-6 transition-all duration-500 delay-100 ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
+              }`}
+            >
+              · Меню навигации
             </div>
-            <nav className="space-y-2">
-              {NAV.map((n) => (
+
+            <nav className="space-y-1">
+              {NAV.map((n, i) => (
                 <a
                   key={n.href}
                   href={n.href}
                   onClick={() => setOpen(false)}
                   data-testid={`mobile-nav-${n.label}`}
-                  className="touch-ripple group flex items-center justify-between p-4 rounded-2xl bg-[#F9FAFB] border border-[#E5E7EB] active:scale-[0.98] transition-transform"
+                  className={`group block py-4 border-b border-white/10 transition-all duration-500 ${
+                    open ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                  }`}
+                  style={{ transitionDelay: `${150 + i * 60}ms` }}
                 >
-                  <div>
-                    <div className="text-base font-extrabold text-[#0F172A] tracking-tight">{n.label}</div>
-                    <div className="text-xs text-[#475569] mt-0.5">{n.desc}</div>
+                  <div className="flex items-baseline gap-4">
+                    <span className="mono text-[11px] tracking-wider text-[#16A34A] font-bold">
+                      {n.num}
+                    </span>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white group-hover:text-[#16A34A] group-active:text-[#16A34A] transition-colors duration-200">
+                          {n.label}
+                        </span>
+                        <ArrowUpRight className="w-5 h-5 text-white/40 group-hover:text-[#16A34A] group-hover:rotate-45 transition-all duration-300" />
+                      </div>
+                      <div className="text-xs text-white/50 mt-0.5">{n.desc}</div>
+                    </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-[#16A34A]" />
                 </a>
               ))}
             </nav>
 
-            <div className="mt-7 grid gap-3">
-              <a
-                href="https://crm.fns.expert/register"
-                onClick={() => setOpen(false)}
-                data-testid="mobile-cta-register"
-                className="touch-ripple flex items-center justify-center gap-2 h-13 py-4 rounded-2xl bg-[#16A34A] text-white font-extrabold text-base active:scale-[0.98] transition-transform"
-              >
+            {/* Big CTA */}
+            <a
+              href="https://crm.fns.expert/register"
+              onClick={() => setOpen(false)}
+              data-testid="mobile-cta-register"
+              className={`mt-8 group flex items-center justify-between gap-2 p-5 rounded-2xl bg-[#16A34A] text-white font-extrabold text-base transition-all duration-500 active:scale-[0.98] hover:bg-[#15803D] ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "560ms" }}
+            >
+              <div className="flex items-center gap-3">
                 <Sparkles className="w-5 h-5" />
-                Начать бесплатно
-              </a>
-              <div className="grid grid-cols-2 gap-3">
-                <a
-                  href="tel:+79854883889"
-                  className="touch-ripple flex items-center justify-center gap-2 py-3 rounded-2xl bg-white border border-[#E5E7EB] text-[#0F172A] font-bold text-sm active:scale-[0.98]"
-                >
-                  <Phone className="w-4 h-4" />
-                  Позвонить
-                </a>
-                <a
-                  href="https://crm.fns.expert/login"
-                  onClick={() => setOpen(false)}
-                  className="touch-ripple flex items-center justify-center py-3 rounded-2xl bg-white border border-[#E5E7EB] text-[#0F172A] font-bold text-sm active:scale-[0.98]"
-                >
-                  Войти
-                </a>
+                <span>Начать бесплатно</span>
               </div>
+              <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform" />
+            </a>
+
+            {/* Quick contact grid */}
+            <div
+              className={`mt-4 grid grid-cols-3 gap-2 transition-all duration-500 ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "620ms" }}
+            >
+              <QuickAction
+                href="tel:+79854883889"
+                icon={<Phone className="w-4 h-4" />}
+                label="Звонок"
+              />
+              <QuickAction
+                href="https://wa.me/79854883889"
+                icon={<MessageCircle className="w-4 h-4" />}
+                label="WhatsApp"
+              />
+              <QuickAction
+                href="https://t.me/FNS_Expert_bot"
+                icon={<Mail className="w-4 h-4" />}
+                label="Telegram"
+              />
             </div>
 
-            <div className="mt-8 pt-6 border-t border-[#E5E7EB]">
-              <div className="text-[10px] uppercase tracking-[0.22em] font-bold text-[#94A3B8] mb-3 px-2">
-                · контакты
+            {/* Footer contacts */}
+            <div
+              className={`mt-10 pt-6 border-t border-white/10 transition-all duration-500 ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "680ms" }}
+            >
+              <div className="text-[10px] uppercase tracking-[0.28em] font-bold text-[#16A34A] mb-3">
+                · Контакты
               </div>
-              <div className="text-sm text-[#475569] space-y-1.5 px-2">
-                <div className="text-[#0F172A] font-bold">+7 985 488-38-89</div>
-                <div>info@fns.expert · @FNS_Expert_bot</div>
+              <a
+                href="tel:+79854883889"
+                className="block text-xl font-extrabold tracking-tight text-white hover:text-[#16A34A] transition-colors"
+              >
+                +7 985 488-38-89
+              </a>
+              <div className="text-xs text-white/50 mt-2 space-y-1">
+                <div>info@fns.expert</div>
                 <div>пн–пт · 09:00–18:00 МСК</div>
               </div>
+              <a
+                href="https://crm.fns.expert/login"
+                onClick={() => setOpen(false)}
+                className="mt-4 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.18em] font-bold text-white/70 hover:text-white transition-colors"
+              >
+                Войти в CRM
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>
       </div>
     </>
+  );
+}
+
+function QuickAction({ href, icon, label }) {
+  return (
+    <a
+      href={href}
+      className="flex flex-col items-center justify-center gap-1.5 py-3 rounded-2xl bg-white/[0.06] border border-white/10 text-white/90 hover:bg-white/10 hover:border-white/20 active:scale-95 transition-all"
+    >
+      <span className="text-[#16A34A]">{icon}</span>
+      <span className="text-[10px] font-bold uppercase tracking-wider">{label}</span>
+    </a>
   );
 }

@@ -3,36 +3,58 @@ Theme Name: FNS Expert
 Theme URI: https://fns.expert
 Author: fns.expert
 Author URI: https://fns.expert
-Description: Премиальный продающий лендинг для сервиса ответов на требования ИФНС. AI + OCR + налоговые юристы. Светлая премиум-палитра, мобильная адаптация (2026), SEO-оптимизация.
-Version: 1.0.0
+Description: Премиальный продающий лендинг для сервиса ответов на требования ИФНС. AI + OCR + налоговые юристы. Светлая премиум-палитра с зелёным акцентом, мобильная адаптация трендов 2026 (полноэкранный бургер, нижний CTA, snap-scroll тарифов), SEO-оптимизация (Schema.org, Open Graph), интеграция с CRM.
+Version: 1.1.0
 Tested up to: 6.7
+Requires at least: 6.0
 Requires PHP: 7.4
-License: GPL v2 or later
+License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fns-expert
-Tags: business, landing-page, custom-colors, custom-logo, responsive, accountancy, tax, fns
+Domain Path: /languages
+Tags: business, landing-page, custom-colors, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, accessibility-ready, blog
 */
 
-/* === Theme reset (basic, чтобы не конфликтовало с WP) === */
-html, body {
-    margin: 0;
-    padding: 0;
-    background: #FFFFFF;
+/* === FNS Expert — global theme styles ===
+ * Стилизация в основном выполнена в собранном Tailwind-бандле (assets/css/main.*.css),
+ * этот файл содержит только метаданные темы (обязательно для WP) и базовые правила,
+ * которые должны быть доступны до загрузки React.
+ */
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF;
+}
+
+body.fns-expert-landing {
+	font-family: 'Onest', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+	color: #0F172A;
 }
 
 #wpadminbar {
-    z-index: 999999;
+	z-index: 999999;
 }
 
 /* React mount point */
 #root {
-    min-height: 100vh;
+	min-height: 100vh;
 }
 
-/* Скрываем дефолтные WP-элементы, если они вдруг подмешаются */
+/* Hide noscript wrapper when JS is enabled */
+noscript .fns-noscript {
+	display: block;
+}
+
+/* Skip link — accessibility */
+.skip-link.screen-reader-text {
+	background: #fff;
+	color: #16A34A;
+}
+
+/* Hide default WP block elements that might inject into landing */
 .wp-site-blocks > header,
 .wp-site-blocks > footer {
-    display: none;
+	display: none;
 }
-
-/* === Все остальные стили (Tailwind + custom) грузятся из assets/css/main.css === */

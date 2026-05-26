@@ -1,3 +1,5 @@
+import { assetUrl } from "@/lib/assets";
+
 export default function Footer() {
   return (
     <footer data-testid="site-footer" className="bg-[#F9FAFB] text-[#475569] border-t border-[#E5E7EB] pt-16 pb-28 lg:pb-10">
@@ -6,7 +8,7 @@ export default function Footer() {
           {/* Logo + about */}
           <div className="col-span-2 lg:col-span-4">
             <div className="flex items-center gap-2.5 mb-5">
-              <img src={typeof window !== "undefined" && window.FNS_THEME?.assetsUrl ? `${window.FNS_THEME.assetsUrl}/images/fns-logo.png` : "/images/fns-logo.png"} alt="fns.expert" className="h-11 w-11 object-contain" />
+              <img src={assetUrl("/images/fns-logo.png")} alt="fns.expert" className="h-11 w-11 object-contain" />
               <span className="font-extrabold text-[#0F172A] text-base tracking-tight">fns.expert</span>
             </div>
             <p className="text-sm leading-relaxed mb-5 max-w-xs">
