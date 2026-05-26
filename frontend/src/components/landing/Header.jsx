@@ -33,11 +33,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#" data-testid="logo-link" className="flex items-center gap-2.5 group">
-            <div className="relative">
-              <div className="w-9 h-9 bg-[#16A34A] rounded-lg flex items-center justify-center font-extrabold text-white text-[15px] tracking-tighter shadow-sm">
-                fns
-              </div>
-            </div>
+            <img
+              src="/images/fns-logo.png"
+              alt="fns.expert"
+              className="h-10 w-10 lg:h-11 lg:w-11 object-contain"
+            />
             <div className="hidden sm:flex flex-col leading-none">
               <span className="font-extrabold text-[#0F172A] text-base tracking-tight">fns.expert</span>
               <span className="text-[10px] text-[#475569] tracking-[0.18em] uppercase font-semibold mt-0.5">

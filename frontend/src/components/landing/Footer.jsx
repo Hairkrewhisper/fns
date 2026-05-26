@@ -5,10 +5,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14">
           {/* Logo + about */}
           <div className="col-span-2 lg:col-span-4">
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-9 h-9 bg-[#16A34A] rounded-lg flex items-center justify-center font-extrabold text-white text-[15px]">
-                fns
-              </div>
+            <div className="flex items-center gap-2.5 mb-5">
+              <img src="/images/fns-logo.png" alt="fns.expert" className="h-11 w-11 object-contain" />
               <span className="font-extrabold text-[#0F172A] text-base tracking-tight">fns.expert</span>
             </div>
             <p className="text-sm leading-relaxed mb-5 max-w-xs">
